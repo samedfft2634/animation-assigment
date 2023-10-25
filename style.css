@@ -4,16 +4,16 @@
 	box-sizing: border-box;
 }
 
-.container {
-	width: 100%;
+body {
 	height: 100vh;
 }
+
 
 .navbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 40px;
+	padding: 20px;
 	position: relative;
 }
 
@@ -92,9 +92,8 @@
 
 .logo {
 	transition: 1s ease-out;
-
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
 }
 .logo:hover {
 	transform: rotate(360deg) scale(1.5);
@@ -161,7 +160,9 @@
 		transform: scale(2);
 	}
 }
+@media screen and(max-width: 1240px) {
 
+}
 @media screen and (max-width: 472px) {
 	#bar, .times, .bars {
 		display: block;
@@ -176,6 +177,10 @@
         right: 2rem;
         top: 6rem;
 
+	}
+	.img img{
+		width: 40px;
+		height: 40px;
 	}
     .times {
         display: none;
