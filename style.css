@@ -1,0 +1,198 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 40px;
+	position: relative;
+}
+
+.navbar ul {
+	display: flex;
+	gap: 3rem;
+	list-style: none;
+}
+
+.navbar ul a {
+	text-decoration: none;
+	color: black;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.title h1 {
+	text-align: center;
+	text-align: center;
+	font-size: 60px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	color: rgb(138, 28, 74);
+	margin-top: 90px;
+}
+
+.img img {
+	width: 250px;
+	height: 200px;
+	border-radius: 5px;
+	animation: scalebir 4s ease-in-out infinite alternate;
+	transform: translate(0);
+	transition: all 3s ease-in-out;
+	background: transparent;
+}
+
+.img img:hover {
+	z-index: 999;
+	position: relative;
+	transform: scale(2);
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	margin: 50px auto;
+	gap: 0.5rem;
+	margin-bottom: 100px;
+	flex-wrap: wrap;
+}
+
+.main:hover img {
+	animation: none;
+}
+
+.footer {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding: 30px;
+	gap: 1.5rem;
+	font-size: 2rem;
+}
+
+.footer a {
+	color: black;
+	transition: 1s ease-out;
+}
+.footer a:hover {
+	transform: rotate(360deg);
+	color: brown;
+	transform-origin: center;
+}
+
+.logo {
+	transition: 1s ease-out;
+
+	width: 200px;
+	height: 200px;
+}
+.logo:hover {
+	transform: rotate(360deg) scale(1.5);
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 700;
+	color: black;
+	margin-left: 45px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	/* Rengin değişimini ekliyoruz */
+}
+
+.navbar ul li a::after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 2px;
+	width: 0;
+	background: #8a1c4a;
+	bottom: 0px;
+	left: 0;
+	/* transform: scaleX(0); */
+	/* Başlangıçta sıfır genişlikle başlasın */
+	/* transform-origin: right; */
+	transition: 1s ease-out;
+	/* Genişliği değişimini ekliyoruz */
+}
+
+.navbar ul li a:hover {
+	color: #8a1c4a;
+	/* Üzerine gelince rengini değiştiriyoruz */
+}
+
+.navbar ul li a:hover::after {
+	transform: scaleX(3);
+	width: 100%;
+	background: brown;
+	left: 0;
+	/* Üzerine gelince alt çizgiyi genişletiyoruz */
+	/* transform-origin: left; */
+}
+
+
+/* ----------------------------------------------- bar ----------------------------------------------- */
+#bar, .times, .bars {
+	display: none;
+}
+
+
+
+@keyframes scalebir {
+	100% {
+		transform: scale(1.5);
+	}
+}
+
+@keyframes scaleiki {
+	100% {
+		transform: scale(2);
+	}
+}
+
+@media screen and (max-width: 472px) {
+	#bar, .times, .bars {
+		display: block;
+		font-size: 3rem;
+	}
+	.menu ul{
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		content-visibility: hidden;
+		position: absolute;
+        right: 2rem;
+        top: 6rem;
+
+	}
+    .times {
+        display: none;
+    }
+
+    #bar {
+        display: none;
+    }  
+	#bar:checked ~ .nav-list {
+		content-visibility: visible;
+
+	}
+    #bar:checked ~ .bars {
+        display: none;
+    }
+    #bar:checked ~ .times {
+        display: block;
+    }
+}
+
